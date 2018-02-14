@@ -18,10 +18,10 @@
             <p>Second number: </p><input type="text" name="num2" id="number2"><br><br>
             </form>
 
-            <button class="button" onclick="addFunction()">Addition</button>
-			   <button class="button" onclick="subFunction()">Subtract</button>
-			      <button class="button" onclick="multiFunction()">Multiply</button>
-				     <button class="button" onclick="divFunction()">Divide</button>
+            <button class="button" onclick="myFunction('ADD')">Addition</button>
+			   <button class="button" onclick="myFunction('SUB')">Subtract</button>
+			      <button class="button" onclick="myFunction('MUL')">Multiply</button>
+				     <button class="button" onclick="myFunction('DIV')">Divide</button>
         <p id="demo"></p>
 
 
@@ -31,40 +31,27 @@
 
 </body>
 <script>
-function addFunction(){
+function myFunction(param){
+console.log(param);
 	var num1 = parseInt(document.getElementById("number1").value);
 	var num2 = parseInt(document.getElementById("number2").value);
-	var add;
-	add = num1 + num2;
-	document.getElementById("demo").innerHTML = 'Addition: ' + add;
+	var result;
+	
+	if (param == 'ADD'){
+		result = num1 + num2;	
+		}
+	else if (param == 'SUB'){
+		result = num1 - num2;	
+		}
+	else if (param == 'MUL'){
+		result = num1 * num2; 
+		}
+	else if (param == 'DIV'){
+		result = num1 / num2;	
+		}
+	document.getElementById("demo").innerHTML = 'Results: ' + result;
 }
 </script>
-<script>
-function subFunction(){
-	var num1 = parseInt(document.getElementById("number1").value);
-	var num2 = parseInt(document.getElementById("number2").value);
-	var subtract;
-	subtract = num1 - num2;
-	document.getElementById("demo").innerHTML = 'Subtract: ' + subtract;
-}
-</script>
-<script>
-function multiFunction(){
-	var num1 = parseInt(document.getElementById("number1").value);
-	var num2 = parseInt(document.getElementById("number2").value);
-	var multi;
-	multi = num1 * num2;
-	document.getElementById("demo").innerHTML = 'Multiply: ' + multi;
-}
-</script>
-<script>
-function divFunction(){
-	var num1 = parseInt(document.getElementById("number1").value);
-	var num2 = parseInt(document.getElementById("number2").value);
-	var div;
-	div = num1 / num2;
-	document.getElementById("demo").innerHTML = 'Divide: ' + div;
-}
-</script>
+
 
 </html>
